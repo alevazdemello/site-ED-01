@@ -31,6 +31,7 @@
           color:#fff;
           border-radius:3px 3px 0px 0px;
           box-shadow: 0 0.5rem 0.8rem #00000080;
+          
         }
         .panels{
           background: #fffffff6;
@@ -41,10 +42,12 @@
           border-radius:30px;
           overflow:hidden;
           padding:20px;  
+          align-items: center;
         }
         .panel{
           display:none;
           animation: fadein .8s;
+          align-items: center;
         }
         @keyframes fadein {
             from {
@@ -76,25 +79,50 @@
           border-top: 3px solid #000;
 
         }     
-        
-        
-        
-::before,
-::after {
-  position: absolute;
-  content: "";
-}
 
-.btn-holder {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 10px auto 35px;
-}
-.btn {
-  position: relative;
-  display: inline-block;
+        .sobre { 
+          display: inline;
+          align-items: center;
+          
+        }
+
+        img {
+         border-radius: 50%;
+         width: 150px;
+         height: 150px;
+         
+
+        }
+
+        img:hover {
+          -webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+          filter: blur(4px);
+        }
+        
+        .container-sobre {
+          text-align: center;
+        }
+
+        #foto-perfil {
+        align-items: center;
+        }        
+        
+        ::before,
+        ::after {
+       position: absolute;
+      content: "";
+      }
+
+      .btn-holder {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       max-width: 1000px;
+       margin: 10px auto 35px;
+      }
+      .btn {
+      position: relative;
+      display: inline-block;
   width: auto; height: auto;
   background-color: transparent;
   border: none;
@@ -162,7 +190,7 @@
         </div>
       <div class="panels">
       <div class="panel" id="one-panel">
-        <div class="panel-title">Why Learn CSS?</div>
+        <div class="panel-title">Links e Afins</div>
         <p>
             <ul>
                 <li>
@@ -184,13 +212,30 @@
       </div>
       <div class="panel" id="four-panel">
         <div class="panel-title">Ale Vaz de Mello</div>
-        <p>
+        <section class="sobre">
+            <div class="container-sobre">
+              <img id="img" src="./ale.jpg" alt="Foto do Ale">
+              <p>SHDBBJHBSDBHFBDHBSDHBSD
+                DJFBDJKSFBDJKBFJKBSDJKDJ
+                SDJFBJKSBFJKSD
+                SDJKSDJKFBDJKBSJKBJKBJ FJKBJKFBKSDBF AKFJBJKFBASJKBFAJKB
+              </p>
+              <br><br>
+              <button class="btn btn-3 hover-border-5">
+                <span>hover me</span>
+              </button>
+              <button class="btn btn-3 hover-border-5">
+                <span>hover me</span>
+              </button>
+              <button class="btn btn-3 hover-border-5">
+                <span>hover me</span>
+              </button>
+            </div>
+            <br><br>
+          
 
-          <button class="btn btn-3 hover-border-5">
-            <span>hover me</span>
-          </button>
 
-        </p>
+        </section>
       </div>
       </div>
     </div>
