@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Estudos Dev</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Arimo:400,700&display=swap');
+        body{
+            background-image: linear-gradient(#e4e4e4 1px, transparent 1px),
+            linear-gradient(90deg, #e4e4e4 1px, transparent 1px);
+        background-size: 10px 10px, 10px 10px, 2px 2px, 2px 2px;
+          font-family: 'Arimo', sans-serif;
+        }
+        h2{
+          color:#000;
+          text-align:center;
+          font-size:2em;
+        }
+        .warpper{
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .tab{
+          cursor: pointer;
+          padding:10px 20px;
+          margin:0px 2px;
+          background:#000;
+          display:inline-block;
+          color:#fff;
+          border-radius:3px 3px 0px 0px;
+          box-shadow: 0 0.5rem 0.8rem #00000080;
+        }
+        .panels{
+          background: #fffffff6;
+          box-shadow: 0 2rem 2rem #00000080;
+          min-height: 400px;
+          width:100%;
+          max-width: 700px;
+          border-radius:30px;
+          overflow:hidden;
+          padding:20px;  
+        }
+        .panel{
+          display:none;
+          animation: fadein .8s;
+        }
+        @keyframes fadein {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+        .panel-title{
+          font-size:1.5em;
+          font-weight:bold
+        }
+        .radio{
+          display:none;
+        }
+        #one:checked ~ .panels #one-panel,
+        #two:checked ~ .panels #two-panel,
+        #three:checked ~ .panels #three-panel,
+        #four:checked ~ .panels #four-panel{
+          display:block
+        }
+        #one:checked ~ .tabs #one-tab,
+        #two:checked ~ .tabs #two-tab,
+        #three:checked ~ .tabs #three-tab,
+        #four:checked ~ .tabs #four-tab{
+          background:#fffffff6;
+          color:#000;
+          border-top: 3px solid #000;
+
+        }     
+        
+        
+        
+::before,
+::after {
+  position: absolute;
+  content: "";
+}
+
+.btn-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 10px auto 35px;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  width: auto; height: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0px 25px 15px;
+  min-width: 150px;
+}
+  .btn span {         
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    transition: 0.3s;
+  }
+ 
+        
+.btn.hover-border-5::before,
+.btn.hover-border-5::after {
+  width: 0%; height: 0%;
+  opacity: 0;
+}
+.btn.hover-border-5::before {
+  top: 0; right: 0;
+  border-top: 1px solid rgb(28, 31, 30);
+  border-left: 1px solid rgb(28, 31, 30);
+  transition: width 0.2s 0.5s ease-out, height 0.15s 0.35s linear, opacity 0s 0.7s;
+}
+.btn.hover-border-5::after {
+  bottom: 0; left: 0px;
+  border-bottom: 1px solid rgb(28, 31, 30);
+  border-right: 1px solid rgb(28, 31, 30);
+  transition: width 0.2s 0.15s linear, height 0.15s ease-in, opacity 0s 0.35s;
+}
+.btn.hover-border-5:hover::before,
+.btn.hover-border-5:hover::after {
+  width: 100%; height: 96%;
+  opacity: 1;
+}
+.btn.hover-border-5:hover::before {
+  transition: width 0.2s ease-in, height 0.15s 0.2s linear, opacity 0s;   /* 1,2 */
+}
+.btn.hover-border-5:hover::after {
+  transition: width 0.2s 0.35s linear, height 0.15s 0.5s ease-out, opacity 0s 0.3s; 
+} 
+        </style>
+    </head>
+  <body>
+
+    <h2><b>Estudos Dev</b></h2>
+    <div class="warpper">
+      <input class="radio" id="one" name="group" type="radio" checked>
+      <input class="radio" id="two" name="group" type="radio">
+      <input class="radio" id="three" name="group" type="radio">
+      <input class="radio" id="four" name="group" type="radio">
+      <div class="tabs">
+      <label class="tab" id="one-tab" for="one">Links</label>
+      <label class="tab" id="two-tab" for="two">Tags e Afins</label>
+      <label class="tab" id="three-tab" for="three">Projetos</label>
+      <label class="tab" id="four-tab" for="four">Sobre</label>
+        </div>
+      <div class="panels">
+      <div class="panel" id="one-panel">
+        <div class="panel-title">Why Learn CSS?</div>
+        <p>
+            <ul>
+                <li>
+                    <a href="link https://www.delftstack.com/pt/howto/css/css-vertical-align-text/#:~:text=Use%20flexbox%20para%20alinhar%20texto%20verticalmente%20em%20CSS,-Tamb%C3%A9m%20podemos%20usar&text=Podemos%20usar%20flexbox%20definindo%20a,verticalmente%20dentro%20de%20um%20div%20.">DelftStack</a> - Alinhar texto verticalmente em CSS
+                </li>
+                <li>
+                    <a href="https://pt.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-events/pc/challenge-cat-stache">Khan Academy</a> - Exercício JS
+                </li>
+            </ul>
+        </p>
+      </div>
+      <div class="panel" id="two-panel">
+        <div class="panel-title">Take-Away Skills</div>
+        <p>You will learn many aspects of styling web pages! You’ll be able to set up the correct file structure, edit text and colors, and create attractive layouts. With these skills, you’ll be able to customize the appearance of your web pages to suit your every need!</p>
+      </div>
+      <div class="panel" id="three-panel">
+        <div class="panel-title">Note on Prerequisites</div>
+        <p>We recommend that you complete Learn HTML before learning CSS.</p>
+      </div>
+      <div class="panel" id="four-panel">
+        <div class="panel-title">Ale Vaz de Mello</div>
+        <p>
+
+          <button class="btn btn-3 hover-border-5">
+            <span>hover me</span>
+          </button>
+
+        </p>
+      </div>
+      </div>
+    </div>
+    
+
+  </body>
+</html>
